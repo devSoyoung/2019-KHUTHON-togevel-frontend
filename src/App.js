@@ -28,7 +28,7 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
         <ConnectedRouter history={history}>
           <div className="App">
-            <Layout>
+            <Layout style={{ height: '100%' }}>
               <Sidebar />
               <Layout>
                 <Header />

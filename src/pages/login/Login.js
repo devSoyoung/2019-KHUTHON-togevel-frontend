@@ -1,12 +1,20 @@
 import React from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { AppActionCreators } from 'store/app/app.action';
 
+import { Form, Icon, Input, Button } from 'antd';
 import './Login.css';
 
-const LoginPage = () => {
+const LoginPage = ({ setLogin, history, isLogin }) => {
+  if (isLogin) {
+    history.push('/');
+  }
+
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('Received values of form: ');
+    setLogin();
+    history.push('/');
   };
 
   return (
@@ -30,11 +38,22 @@ const LoginPage = () => {
           <Button type="primary" htmlType="submit" className="login-form-button">
             로그인
           </Button>
-          <div className="join-button-area">회원이 아니라면 <a href="">바로 가입하세요 :)</a></div>
+          <div className="join-button-area">회원이 아니라면 <Link to="/register">바로 가입하세요 :)</Link></div>
         </Form.Item>
       </Form>
     </div>
   );
 };
 
-export default LoginPage;
+const mapStateToProps = state => ({
+  isLogin: state.app.isLogin,
+});
+
+const mapDispatchToProps = dispatch => ({
+  setLogin: () => dispatch(AppActionCreators.setLogin()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(LoginPage);

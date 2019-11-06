@@ -56,7 +56,7 @@ const mockCards = [
 
 const TravelGroup = () => {
   return (
-    <Carousel effect="scrollx" dotPosition="top">
+    <Carousel effect="scrollx" dotPosition="top" autoplay>
       {mockCards.map((card, idx) => (
         <Card info={card} key={`travel_card_item_${idx}`}/>
       ))}

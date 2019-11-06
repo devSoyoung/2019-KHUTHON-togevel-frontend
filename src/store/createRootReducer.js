@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
-// import accountReducer from './account/account.reducer';
+import appReducer from './app/app.reducer';
 // import errorReducer from './error/error.reducer';
 // import friendReducer from './friends/friend.reducer';
 // import loadingReducer from './loading/loading.reducer';
@@ -11,7 +11,7 @@ import { connectRouter } from 'connected-react-router';
 
 const createRootReducer = history =>
   combineReducers({
-    // account: accountReducer,
+    app: appReducer,
     // error: errorReducer,
     // friend: friendReducer,
     // loading: loadingReducer,

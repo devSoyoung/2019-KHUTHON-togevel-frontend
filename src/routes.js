@@ -6,15 +6,17 @@ import { connect } from 'react-redux';
 
 import LoginPage from 'pages/login';
 import MainPage from 'pages/main';
-// import IntroPage from 'pages/intro';
+import IntroPage from 'pages/intro';
 import TravelPage from 'pages/travel';
+import RegisterPage from 'pages/register';
 
-function RouteComponent({ isLoggedIn }) {
+function RouteComponent({ isLogin }) {
   return (
     <Switch>
       <Route path="/login" component={LoginPage} />
+      <Route path="/register" component={RegisterPage} />
       <Route path="/travel/:id" component={TravelPage} />
-      <Route path="/" component={MainPage} />
+      <Route path="/" component={isLogin ? MainPage : IntroPage} />
     </Switch>
   );
 }
@@ -24,7 +26,7 @@ RouteComponent.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  // isLoggedIn: state.account.isLoggedIn,
+  isLogin: state.app.isLogin,
 });
 
 const mapDispatchToProps = () => ({});
