@@ -1,12 +1,15 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+// import { PrivateRoute } from 'components';
 
 import LoginPage from 'pages/login';
 import MainPage from 'pages/main';
 // import IntroPage from 'pages/intro';
 import TravelPage from 'pages/travel';
 
-function RouteComponent({ }) {
+function RouteComponent({ isLoggedIn }) {
   return (
     <Switch>
       <Route path="/login" component={LoginPage} />
@@ -17,7 +20,16 @@ function RouteComponent({ }) {
 }
 
 RouteComponent.propTypes = {
-
+  // isLoggedIn: PropTypes.bool.isRequired,
 };
 
-export default RouteComponent;
+const mapStateToProps = state => ({
+  // isLoggedIn: state.account.isLoggedIn,
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(RouteComponent);
