@@ -1,0 +1,47 @@
+.card-main-image {
+  height: 250px;
+  width: 100%;
+}
+
+.card-status {
+  display: inline-block;
+  vertical-align: 3px;
+  margin-right: 5px;
+  color: white;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 16px;
+}
+
+.ant-card-cover img.card-main-image {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-item.ant-card {
+  border-radius: 10px;
+}
+
+.card-item .ant-card-meta-title {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.card-info {
+  margin-bottom: 3px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.card-info-title {
+  margin-right: 10px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.apply-button {
+  float: right;
+  letter-spacing: -1px;
+  font-size: 13px;
+}

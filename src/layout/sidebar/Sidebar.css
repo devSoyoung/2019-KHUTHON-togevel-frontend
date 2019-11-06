@@ -1,0 +1,7 @@
+.sidebar.show {
+  display: initial;
+}
+
+.sidebar {
+  display: none;
+}

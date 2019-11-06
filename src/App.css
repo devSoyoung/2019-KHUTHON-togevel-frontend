@@ -1,5 +1,29 @@
+@import '~antd/dist/antd.css';
+
+div[id="root"] {
+  height: 100%;
+}
+
+.ant-layout-header {
+  background: white;
+  box-shadow: 0px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.ant-layout-content {
+  margin: 15px;
+  /*border-radius: 10px;*/
+  /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);*/
+  /*background-color: white;*/
+  /*padding: 10px;*/
+}
+
+.ant-layout-has-sider {
+  height: 100%;
+}
+
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
