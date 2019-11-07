@@ -17,7 +17,7 @@ const AppSidebar = ({ closeSidebar, showSidebar, setLogout, isLogin }) => {
                 <Icon type="flag" theme="twoTone" /><p>여행모임</p>
               </div>
               <div className="sidebar-item">
-                <Icon type="car" theme="twoTone" /><p>내일로여행</p>
+                <Link to="/korail"><Icon type="car" theme="twoTone" /><p>내일로여행</p></Link>
               </div>
               <div className="sidebar-item">
                 <Icon type="environment" theme="twoTone" /><p>요즘여기</p>

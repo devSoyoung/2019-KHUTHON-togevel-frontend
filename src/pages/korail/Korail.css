@@ -1,0 +1,59 @@
+.korail-page {
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.korail-page-title {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.korail-link {
+  float: right;
+  font-size: 12px;
+  letter-spacing: -0.3px;
+}
+
+.korail-description {
+  color: black;
+  margin-top: 50px;
+  text-align: left;
+  padding-left: 20px;
+  letter-spacing: -0.3px;
+  font-weight: 300;
+}
+
+.korail-description strong {
+  font-weight: 700;
+}
+
+.korail-instagram-feed {
+  padding: 5px 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding-bottom: 20px;
+}
+
+.korail-instagram-feed h2 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin: 15px;
+}
+
+.instagram-img {
+  border-radius: 8px;
+  width: 31%;
+  margin: 3px;
+}
+
+.instagram-img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+}

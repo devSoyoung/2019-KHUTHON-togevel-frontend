@@ -9,6 +9,7 @@ import MainPage from 'pages/main';
 import IntroPage from 'pages/intro';
 import TravelPage from 'pages/travel';
 import RegisterPage from 'pages/register';
+import KorailPage from 'pages/korail';
 
 function RouteComponent({ isLogin }) {
   return (
@@ -16,6 +17,7 @@ function RouteComponent({ isLogin }) {
       <Route path="/login" component={LoginPage} />
       <Route path="/register" component={RegisterPage} />
       <Route path="/travel/:id" component={TravelPage} />
+      <Route path="/korail" component={KorailPage} />
       <Route path="/" component={isLogin ? MainPage : IntroPage} />
     </Switch>
   );

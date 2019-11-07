@@ -1,7 +1,7 @@
 @import '~antd/dist/antd.css';
 
 div[id="root"] {
-  height: 100%;
+  min-height: 100%;
 }
 
 .ant-layout-header {

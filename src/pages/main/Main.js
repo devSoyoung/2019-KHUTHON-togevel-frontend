@@ -1,13 +1,15 @@
 import React from 'react';
 
 import TravelGroup from './TravelGroup';
-import Korail from './korail';
+import KorailDescription from '../korail/KorailDescription';
 
 const MainPage = () => {
   return (
     <>
       <TravelGroup />
-      <Korail />
+      <div style={{ marginTop: '15px' }}>
+        <KorailDescription/>
+      </div>
     </>
   );
 };
