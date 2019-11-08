@@ -14,7 +14,7 @@ const AppSidebar = ({ closeSidebar, showSidebar, setLogout, isLogin }) => {
           {isLogin && (
             <>
               <div className="sidebar-item">
-                <Icon type="flag" theme="twoTone" /><p>여행모임</p>
+                <Link to="/travelgroup"><Icon type="flag" theme="twoTone" /><p>여행모임</p></Link>
               </div>
               <div className="sidebar-item">
                 <Link to="/korail"><Icon type="car" theme="twoTone" /><p>내일로여행</p></Link>

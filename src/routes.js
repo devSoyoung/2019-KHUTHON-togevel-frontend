@@ -10,6 +10,8 @@ import IntroPage from 'pages/intro';
 import TravelPage from 'pages/travel';
 import RegisterPage from 'pages/register';
 import KorailPage from 'pages/korail';
+import TravelGroupPage from 'pages/travelGroup';
+import NewGroupPage from 'pages/newGroup';
 
 function RouteComponent({ isLogin }) {
   return (
@@ -18,6 +20,9 @@ function RouteComponent({ isLogin }) {
       <Route path="/register" component={RegisterPage} />
       <Route path="/travel/:id" component={TravelPage} />
       <Route path="/korail" component={KorailPage} />
+      <Route path="/travel" component={TravelPage} />
+      <Route path="/travelgroup" component={TravelGroupPage} />
+      <Route path="/newgroup" component={NewGroupPage} />
       <Route path="/" component={isLogin ? MainPage : IntroPage} />
     </Switch>
   );

@@ -1,0 +1,62 @@
+.new-group-button {
+  margin-left: auto;
+  display: block;
+}
+
+.box {
+  background: white;
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.box-title {
+  text-align: left;
+  font-size: 20px;
+  letter-spacing: -0.8px;
+  margin-left: 15px;
+  font-weight: 700;
+}
+
+.group-item {
+  padding: 0 10px;
+  width: 100%;
+  position: relative;
+}
+
+.group-item-title {
+  /*display: inline-block;*/
+  letter-spacing: -0.5px;
+  text-align: left;
+  font-weight: 600;
+  padding-left: 45px;
+}
+
+.group-item-title a {
+  color: black;
+}
+.group-item-title a:hover {
+  color: #1890ff;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.group-item-date {
+  display: block;
+  font-size: 11px;
+  letter-spacing: -0.5px;
+  color: gray;
+  font-weight: initial;
+}
+
+.group-item-status {
+  display: inline-block;
+}
+
+.group-item-button {
+  /*display: inline-block;*/
+  position: absolute;
+  right: 0;
+  top: 5px;
+}

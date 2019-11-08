@@ -23,6 +23,12 @@ const appReducer = (state = initialState, action) => {
       return {
         ...state,
         isLogin: true,
+        user: {    // 주최자인 사용자 정보
+          email: 'test@test.com',
+          name: '김철수',
+          school: '경희대학교',
+          grade: 4,
+        },
       };
 
     case AppActionTypes.SET_LOGOUT:

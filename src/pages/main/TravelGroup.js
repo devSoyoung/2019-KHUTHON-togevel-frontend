@@ -6,7 +6,7 @@ import Card from 'components/card';
 const mockCards = [
   {
     id: 1,
-    title: '북한산 등반 모임',
+    title: '경희대학교 가을 농활',
     coverImage: 'https://cdn.britannica.com/67/19367-050-885866B4/Valley-Taurus-Mountains-Turkey.jpg',
     organiser: {    // 주최자인 사용자 정보
       email: 'test@test.com',
