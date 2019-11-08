@@ -7,6 +7,7 @@ import {
   Button,
   Upload,
   Input,
+  message,
   Icon,
   DatePicker,
 } from 'antd';
@@ -16,6 +17,24 @@ import './NewGroup.css';
 const { Option } = Select;
 const { MonthPicker, RangePicker } = DatePicker;
 
+function getBase64(img, callback) {
+  const reader = new FileReader();
+  reader.addEventListener('load', () => callback(reader.result));
+  reader.readAsDataURL(img);
+}
+
+function beforeUpload(file) {
+  const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+  if (!isJpgOrPng) {
+    message.error('You can only upload JPG/PNG file!');
+  }
+  const isLt2M = file.size / 1024 / 1024 < 2;
+  if (!isLt2M) {
+    message.error('Image must smaller than 2MB!');
+  }
+  return isJpgOrPng && isLt2M;
+}
+
 const schools = ['경희대학교', '성균관대학교', '서울대학교', '고려대학교', '한양대학교', '중앙대학교', '경기대학교', '동국대학교', '세종대학교', '포항공과대학교', '명지대학교', '인천대학교', '인하대학교', '이화여자대학교', '서강대학교', '서울시립대학교', '단국대학교', '우송대학교'];
 
 const rangeConfig = {
@@ -23,6 +42,10 @@ const rangeConfig = {
 };
 
 class NewGroupPage extends React.Component {
+  state = {
+    loading: false,
+  };
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -31,6 +54,24 @@ class NewGroupPage extends React.Component {
       }
     });
   };
+
+  handleChange = info => {
+    if (info.file.status === 'uploading') {
+      this.setState({ loading: true });
+      return;
+    }
+    if (info.file.status === 'done') {
+      // Get this url from response in real world.
+      getBase64(info.file.originFileObj, imageUrl =>
+        this.setState({
+          imageUrl,
+          loading: false,
+        }),
+      );
+    }
+  };
+
+
 
   normFile = e => {
     console.log('Upload event:', e);
@@ -41,6 +82,14 @@ class NewGroupPage extends React.Component {
   };
 
   render() {
+    const uploadButton = (
+      <div>
+        <Icon type={this.state.loading ? 'loading' : 'plus'} />
+        <div className="ant-upload-text">Upload</div>
+      </div>
+    );
+    const { imageUrl } = this.state;
+
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 6 },
@@ -89,13 +138,17 @@ class NewGroupPage extends React.Component {
               valuePropName: 'fileList',
               getValueFromEvent: this.normFile,
             })(
-              <Upload.Dragger name="files" action="/upload.do">
-                <p className="ant-upload-drag-icon">
-                  <Icon type="inbox" />
-                </p>
-                <p className="ant-upload-text" style={{ fontSize: '15px'}}>업로드 할 이미지를 드래그 해 주세요.</p>
-                <p className="ant-upload-hint">이미지 크기는 최대 10MB까지 가능합니다.</p>
-              </Upload.Dragger>,
+              <Upload
+                name="avatar"
+                listType="picture-card"
+                className="avatar-uploader"
+                showUploadList={false}
+                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                beforeUpload={beforeUpload}
+                onChange={this.handleChange}
+              >
+                {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+              </Upload>,
             )}
           </Form.Item>
 
