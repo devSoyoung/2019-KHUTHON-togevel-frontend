@@ -11,7 +11,7 @@ const backgroundColor = {
 };
 
 const statusName = {
-  'in progress': '진행중',
+  'in progress': '모집중',
   'done': '마감',
 };
 
@@ -21,7 +21,7 @@ const MyCard = ({ info }) => {
     <Card
       hoverable
       className="card-item"
-      cover={<img className="card-main-image" alt="여행 대표이미지" src={coverImage} />}
+      cover={<img className="card-main-image" alt="여행 대표이미지" src={coverImage || 'https://cdn.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png'} />}
     >
       <Meta
         title={(
@@ -48,7 +48,6 @@ const MyCard = ({ info }) => {
               <span className='card-info-title'>인원수</span>
               {currentPeopleNum}명 / {totalPeopleNum}명
             </p>
-            <Button className="apply-button" type="primary" size="small" ghost disabled={status === 'done'}>신청하기</Button>
           </>
         )}
       />

@@ -8,8 +8,8 @@ const KorailDescription = () => {
     <Card
       hoverable
       className="card-item"
-      cover={<img className="card-main-image" alt="여행 대표이미지"
-                  src='http://www.efnews.co.kr/news/photo/201505/57542_28138_0949.jpg' />}
+      // cover={<img className="card-main-image" alt="여행 대표이미지"
+      //             src='http://www.efnews.co.kr/news/photo/201505/57542_28138_0949.jpg' />}
     >
       <Meta
         description={(
@@ -26,6 +26,9 @@ const KorailDescription = () => {
               일상을 떠나 전국 곳곳의 <strong>숨은 명소</strong>를 찾아보고 <br/>
               내일의 희망과 활기도 함께 찾아보세요!
             </p>
+
+            <img className="card-main-image" alt="여행 대표이미지"
+                        src='http://www.efnews.co.kr/news/photo/201505/57542_28138_0949.jpg' />
           </div>
         )}
       />

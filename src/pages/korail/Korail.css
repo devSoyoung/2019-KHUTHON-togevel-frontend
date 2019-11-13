@@ -57,3 +57,10 @@
   opacity: 0.7;
   transition: 0.3s;
 }
+
+
+.korail-description-area .card-main-image {
+  margin-top: 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}

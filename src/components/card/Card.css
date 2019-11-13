@@ -16,10 +16,6 @@
 .ant-card-cover img.card-main-image {
   border-radius: 10px 10px 0 0;
 }
-.ant-card-cover img.card-main-image:hover {
-  opacity: 0.8;
-  transition: 0.2s;
-}
 
 .card-item.ant-card {
   border-radius: 10px;
